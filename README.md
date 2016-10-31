@@ -5,7 +5,11 @@
 这里主要讨论一下几种web存储方式
 
 <h3>cookie</h3>
+特点：
 
+每次http请求头都会携带
+
+大小小于4k
 
 设置cookie的方法
 
@@ -21,7 +25,9 @@ arrial=1; wocap=nima
 
 <h3>localstorage</h3>
 
-localStorage 方法存储的数据没有时间限制
+localStorage 方法存储的数据没有时间限制，除非手动删除
+
+每个域名能存储5M数据
 
 使用方法
 ```js
@@ -33,10 +39,12 @@ localStorage 方法存储的数据没有时间限制
     function getLocalStorage(key){
         return localStorage.getItem(key)
     } 
+    localStorage.key(0)//取出第一条数据
     //删除
     function removeLocalStorage(key){
         return localStorage.removeItem(key)
-    }     
+    }  
+    localStorage.clear()//删除所有，也可传入数字删除特定数据
     //调用
     setLocalStorage('color','#ffff')
     getLocalStorage('color')
@@ -60,7 +68,7 @@ sessionStorage 方法针对一个 session 进行数据存储。当用户关闭�
     setSessionStorage('color','#ffff')
     getSessionStorage('color')  
 ```
-
+<a href="http://www.jb51.net/html5/144597.html">参考链接</a>
 
 
 
