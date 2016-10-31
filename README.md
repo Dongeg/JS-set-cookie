@@ -19,6 +19,11 @@
       <script>
       /* 如果没有cookie信息，将显示div，否则不显示。 （请在火狐浏览器下测试） */
       //设置cookie
+      /*
+      name  键
+      value 值
+      iDay  有效时长（天）
+      */
       function setCookie(name, value, iDay){
           var oDate=new Date();
           oDate.setDate(oDate.getDate()+iDay);
