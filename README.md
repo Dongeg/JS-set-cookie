@@ -1,7 +1,13 @@
 # set-cookie
 设置cookie的方法
-//需要在服务器环境下才能起作用<br>
+//在本地可以用火狐浏览器测试<br>
+
 //this example should be running in a server condition
+
+cookie的存储形式
+```
+arrial=1; wocap=nima
+```
 ```html
       <!DOCTYPE html>
       <html>
@@ -56,6 +62,11 @@
         {
           oDiv.style.display='block';
           setCookie('arrial', '1', 30);    //向cookie中添加'arrial', '1', 30
+          setCookie('wocao', 'nima', 3);
+          setCookie('wori', 'nima', 1);
+        }
+        else{
+            alert(document.cookie)//弹出所有cookie
         }
       };
       </script>
