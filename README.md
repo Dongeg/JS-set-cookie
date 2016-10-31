@@ -2,7 +2,7 @@
 设置cookie的方法
 //需要在服务器环境下才能起作用<br>
 //this example should be running in a server condition
-
+```html
       <!DOCTYPE html>
       <html>
       <head>
@@ -60,3 +60,4 @@
       <div id="div1">没有cookie信息</div>
       </body>
       </html>
+```
