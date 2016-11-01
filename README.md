@@ -51,6 +51,8 @@ localStorage 方法存储的数据没有时间限制，除非手动删除
 ```
 <h3>sessionStorage</h3>
 sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。
+
+用法：与localStorage几乎一样
 ```js
     //  设置 sessionStorage
     function setSessionStorage(key,val){
@@ -74,7 +76,7 @@ sessionStorage 方法针对一个 session 进行数据存储。当用户关闭�
 <a href="http://javascript.ruanyifeng.com/bom/indexeddb.html">参考链接</a>
 
 <h3> Application Cache</h3>
-<p style="color:red;">该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性。</p>
+<p >该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性。</p>
 
 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Using_the_application_cache">参考链接</a>
 
