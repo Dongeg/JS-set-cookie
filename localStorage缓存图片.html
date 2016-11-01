@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>document</title>
+    <title>localStorage缓存图片</title>
 </head>
 <body>
 
@@ -20,10 +20,10 @@
     else{
        demo.innerHTML="<img src='img/1.jpg' />"  
     }
-
+    //将图片通过canvas存入 localStorage
     function savePic(key,imgSrc){
         var img=document.createElement('img');
-        img.crossOrigin = 'anonymous';
+        img.crossOrigin = 'anonymous';//解决toDataURL跨域问题
         img.src=imgSrc;
         img.addEventListener('load',function(){
             var imgCanvas=document.createElement('canvas');
@@ -33,7 +33,7 @@
 
             imgContext.drawImage(this,0,0,this.width,this.height)
 
-            var imgAsDataURL=imgCanvas.toDataURL('image/png');
+            var imgAsDataURL=imgCanvas.toDataURL('image/png');//通过canvas将图片转化为base64字符串
 
             try{
                 localStorage.setItem(key,imgAsDataURL);
@@ -43,6 +43,7 @@
             }
         },false);
     }
+    //从localStorage中读取图片
     function getPic(key){
         var srcStr=localStorage.getItem(key);
         var imgObj=document.createElement('img');
