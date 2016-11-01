@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+</head>
+<body>
+
+<div id="demo"></div>
+
+<script>
+    var demo=document.getElementById('demo')   
+    var src='img/5.jpg';
+    savePic('girl',src)
+    if(getPic('girl')){
+        var girl=getPic('girl')
+        demo.appendChild(girl)         
+    }
+    else{
+       demo.innerHTML="<img src='img/1.jpg' />"  
+    }
+
+    function savePic(key,imgSrc){
+        var img=document.createElement('img');
+        img.crossOrigin = 'anonymous';
+        img.src=imgSrc;
+        img.addEventListener('load',function(){
+            var imgCanvas=document.createElement('canvas');
+            var imgContext=imgCanvas.getContext('2d');
+            imgCanvas.width=this.width;
+            imgCanvas.height=this.height;
+
+            imgContext.drawImage(this,0,0,this.width,this.height)
+
+            var imgAsDataURL=imgCanvas.toDataURL('image/png');
+
+            try{
+                localStorage.setItem(key,imgAsDataURL);
+            }
+            catch(e){
+                console.log('Storage faile:'+e);
+            }
+        },false);
+    }
+    function getPic(key){
+        var srcStr=localStorage.getItem(key);
+        var imgObj=document.createElement('img');
+        imgObj.src=srcStr;
+        if(srcStr){
+            return imgObj
+        }
+        else{
+            return false;
+        }
+    }
+</script>
+</body>
+
+</html>
