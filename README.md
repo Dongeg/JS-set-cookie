@@ -39,12 +39,12 @@ localStorage 方法存储的数据没有时间限制，除非手动删除
     function getLocalStorage(key){
         return localStorage.getItem(key)
     } 
-    localStorage.key(0)//取出第一条数据
+    localStorage.key(0)//取出第一条数据的key
     //删除
     function removeLocalStorage(key){
         return localStorage.removeItem(key)
     }  
-    localStorage.clear()//删除所有，也可传入数字删除特定数据
+    localStorage.clear()//删除所有
     //调用
     setLocalStorage('color','#ffff')
     getLocalStorage('color')
