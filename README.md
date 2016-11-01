@@ -70,6 +70,9 @@ sessionStorage 方法针对一个 session 进行数据存储。当用户关闭�
 ```
 <a href="http://www.jb51.net/html5/144597.html">参考链接</a>
 
+<h3>indecDB</h3>
+<a href="http://javascript.ruanyifeng.com/bom/indexeddb.html">参考链接</a>
+
 
 
 
