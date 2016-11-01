@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置localStorage过期设置</title>
+</head>
+
+<body>
+<script>
+// 设置localStorage过期时间
+function set(key,v){
+    var curTime=new Date().getTime();
+    localStorage.setItem(key,JSON.stringify({data:v,time:curTime}))
+}
+//exp为过期时间，单位是毫秒
+function get(key,exp){
+    var data=localStorage.getItem(key);
+    var dataObj=JSON.parse(data);
+    if(new Date.getTime()-dataObj.time>exp){
+        console.log('expires')
+    }
+    else{
+        console.log('data='+dataObj.data)
+    }
+}
+</script>
+</body>
+
+</html>
